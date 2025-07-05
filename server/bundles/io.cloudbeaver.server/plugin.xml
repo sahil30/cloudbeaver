@@ -42,6 +42,22 @@
             </credentials>
 
         </authProvider>
+        <authProvider id="ldap" label="LDAP" description="LDAP authentication" class="io.cloudbeaver.auth.provider.ldap.LdapAuthProvider">
+            <configuration>
+                <propertyGroup label="Server">
+                    <property id="url" label="LDAP URL" type="string" description="LDAP server URL"/>
+                    <property id="baseDn" label="Base DN" type="string" description="Base distinguished name"/>
+                    <property id="userDnPattern" label="User DN pattern" type="string" description="Pattern for user DN (use {user})"/>
+                </propertyGroup>
+            </configuration>
+            <credentials>
+                <propertyGroup label="Credentials">
+                    <property id="user" label="User name" type="string" description="User name" identifying="true" admin="true" user="true"/>
+                    <property id="password" label="Password" type="string" description="User password" admin="true" user="true"/>
+                </propertyGroup>
+            </credentials>
+
+        </authProvider>
     </extension>
 
 </plugin>
